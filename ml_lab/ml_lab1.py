@@ -59,12 +59,15 @@ except:
   print("wrong mode enabled")
  # -------------------------------------------------
   print("INHERITANCE IN PYTHON")
-class Person(object):
+class Person:
+  def _init_(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
 
-  def _init_(self, name, id):
-    self.name = name
-    self.id = id
-  def Display(self):
-    print(self.name, self.id)
-emp = Person("Satyam", 102)
-emp.Display()
+  def printname(self):
+    print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname method:
+
+x = Person("John", "Doe")
+x.printname()
